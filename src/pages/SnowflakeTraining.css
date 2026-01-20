@@ -1,0 +1,129 @@
+.training-page {
+    min-height: 100vh;
+    padding: var(--spacing-xl) 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.platform-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.platform-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(41, 181, 232, 0.5));
+}
+
+.snowflake-page .platform-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.page-description {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: var(--spacing-md) auto 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.category-filter {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.filter-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--glass-border);
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    border-color: var(--snowflake-primary);
+    color: var(--text-primary);
+    background: var(--glass-bg);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--snowflake-primary), var(--snowflake-secondary));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(41, 181, 232, 0.3);
+}
+
+.databricks-page .filter-btn.active {
+    background: linear-gradient(135deg, var(--databricks-primary), var(--databricks-secondary));
+    box-shadow: 0 4px 15px rgba(255, 54, 33, 0.3);
+}
+
+.training-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.training-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.section-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.training-grid {
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-description {
+        font-size: 1rem;
+    }
+
+    .category-filter {
+        gap: var(--spacing-xs);
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}

@@ -1,0 +1,89 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 20px var(--glass-shadow);
+}
+
+.header-content {
+    padding: var(--spacing-sm) 0;
+    gap: var(--spacing-md);
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--snowflake-primary), var(--databricks-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover h2 {
+    transform: scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: var(--glass-bg);
+}
+
+.snowflake-icon {
+    filter: drop-shadow(0 0 3px var(--snowflake-primary));
+}
+
+.databricks-icon {
+    filter: drop-shadow(0 0 3px var(--databricks-primary));
+}
+
+.refresh-icon {
+    transition: transform var(--transition-normal);
+    display: inline-block;
+}
+
+.btn-refresh:hover .refresh-icon {
+    transform: rotate(180deg);
+}
+
+.spinning {
+    animation: rotateRefresh 1s linear infinite;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+
+    .nav-link {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
