@@ -112,7 +112,7 @@ app.get('/api/features', async (req, res) => {
                         const dateStr = dateMatch[1];
                         const title = dateMatch[2];
                         const link = $(el).find('a').attr('href');
-                        const fullLink = link ? (link.startsWith('http') ? link : `https://docs.snowflake.com${link}`) : snowflakeUrl;
+                        const fullLink = link ? (link.startsWith('http') ? link : `https://docs.snowflake.com${link.startsWith('/') ? '' : '/'}${link}`) : snowflakeUrl;
 
                         scrapedFeatures.push({
                             id: `sf-${i}-${Date.now()}`,
@@ -156,7 +156,7 @@ app.get('/api/features', async (req, res) => {
                                 description: "Latest release note entry from Databricks docs.",
                                 status: 'update',
                                 category: "Platform Update",
-                                documentationUrl: href.startsWith('http') ? href : `https://docs.databricks.com${href}`
+                                documentationUrl: href.startsWith('http') ? href : `https://docs.databricks.com${href.startsWith('/') ? '' : '/'}${href}`
                             });
                         }
                     }
