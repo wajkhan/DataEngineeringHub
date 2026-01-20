@@ -56,7 +56,7 @@ export const snowflakeTraining = {
         duration: "25:15",
         difficulty: "Intermediate",
         type: "free",
-        url: "https://www.youtube.com/@snowflakedevelopers",
+        url: "https://www.snowflake.com/en/developers/?utm_source=youtube&utm_medium=social&utm_campaign=--en-&utm_content=-ld-devyt-homepage",
         instructor: "Snowflake Developers"
       },
       {
